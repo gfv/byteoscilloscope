@@ -7,7 +7,7 @@ int main(int argc, char** argv) {
         wave[j] = ' ';
     }
     wave[129] = 0;
-    while (1) {
+    while (!feof(stdin)) {
         wave[64] = '|';
         wave[32] = '[';
         wave[96] = ']';
