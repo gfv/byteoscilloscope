@@ -16,9 +16,12 @@ int main(int argc, char** argv) {
         unsigned char c;
         i++;
         scanf("%c", &c);
+        
         if (i%2 == 0) continue;
         printf("\n");
+        
         int rv = (c/2);
+        int initial = c;
         wave[rv] = '%';
 
         printf("[%s] ", wave);
@@ -26,7 +29,7 @@ int main(int argc, char** argv) {
         if (rv > 96 || rv < 32) {
             printf("\033[01;31m%d\033[00m RED", rv);
         } else {
-            printf("%d", rv);
+            printf("%d", initial);
         }
     }
 
