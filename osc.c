@@ -2,11 +2,13 @@
 
 int main(int argc, char** argv) {
     int i = 0;
-    char wave[130];
-    for(int j = 0; j < 129; j++) {
+    char wave[129];
+    for(int j = 0; j < 128; j++) {
         wave[j] = ' ';
     }
-    wave[129] = 0;
+    
+    wave[128] = 0;
+    
     while (!feof(stdin)) {
         wave[64] = '|';
         wave[32] = '[';
@@ -19,7 +21,7 @@ int main(int argc, char** argv) {
         int rv = (c/2);
         wave[rv] = '%';
 
-        printf("%s", wave);
+        printf("[%s] ", wave);
         wave[rv] = ' ';
         if (rv > 96 || rv < 32) {
             printf("\033[01;31m%d\033[00m RED", rv);
